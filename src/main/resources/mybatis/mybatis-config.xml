@@ -4,29 +4,11 @@
     "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
-	<!-- properties : 해당 위치의 파일을 참조하여 현재 xml 내에서 ${name}로 사용가능 -->
-	<properties resource="properties/globals.properties" />
 	
 	<!-- typeAlias : 별명 설정 -->
 	<typeAliases>
-		<typeAlias alias="BoardVO" type="com.bolg.studysomething.board.service.BoardVO" />
+		<typeAlias alias="BoardVO" type="com.blog.studysomething.board.service.BoardVO" />
 	</typeAliases>
 	
-	<!-- environments : DB Connection을 맺기 위한 정보 -->
-	<environments default="development">
-		<environment id="development">
-			<transactionManager type="JDBC" />
-			<dataSource type="POOLED">
-				<property name="driver" value="${driver}" />
-				<property name="url" value="${url}" />
-				<property name="username" value="${username}" />
-				<property name="password" value="${password}" />
-			</dataSource>
-		</environment>
-	</environments>
 	
-	<!-- mappers : 실질적으로 query문이 있는 파일 지정 -->
-	<mappers>
-		<mapper resource="sample/Sample_SQL.xml" />
-	</mappers>
 </configuration>
